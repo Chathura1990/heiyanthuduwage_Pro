@@ -93,6 +93,16 @@ img {
     border: 0px none; 
 }
 
+.imgimg {
+    position: absolute;
+    left: -155px;
+    top: 97px;
+    width: 373px;
+    border: 0px solid;
+    padding: 0;
+}
+
+
 input {
     outline: 0;
     border: none;
@@ -829,6 +839,9 @@ label small{
     .navbar .yamm-content h5 {
         font-size: 14px;
     }
+    .imgimg{
+        display: none;
+    }
 }
 
 @media screen and  (max-width: 550px) {
@@ -838,6 +851,9 @@ label small{
 
     .buttonl {
         font: normal 5vw/normal "redressed", Helvetica, sans-serif !important;
+    }
+    .imgimg{
+        display: none;
     }
 }
 
@@ -1381,11 +1397,11 @@ h1{
     margin-bottom: 0
 }
 .page-title h2 {
-    margin: 10px 0px;
+    margin: 39px 0px;
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 8px;
 }
 .page-title h2 span{
     color: #00ADEF
@@ -2311,12 +2327,12 @@ Welcom
     position: absolute;
     top: 119px;
     right: 25px;
-    font-weight: 600;
-    font-size: 15px;
-    border-radius: 46%;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 20%;
     padding: 67px 10px;
-    width: 228px;
-    height: 160px;
+    width: 173px;
+    height: 134px;
 }
 /*===================================================
 count-area
@@ -2956,7 +2972,7 @@ button1 :hover{
   -o-text-overflow: clip;
   text-overflow: clip;
   white-space: pre;
-  text-shadow: 0 0 8px rgba(255,255,255,1) , 0 0 4px rgba(255,255,255,1) ;
+  text-shadow: 0 0 8px rgba(200,200,200,1) , 0 0 4px rgba(200,200,200,1) ;
   -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: class="support css-value">all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -2964,11 +2980,11 @@ button1 :hover{
 }
 
 .buttonl a {
-    color: black;
+    color: white;
 }
 
 .buttonl a:hover {
-    color: #F00;
+    color: black;
 }
 
 
