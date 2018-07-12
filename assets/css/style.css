@@ -1402,6 +1402,7 @@ h1{
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 8px;
+    font-weight: bold;
 }
 .page-title h2 span{
     color: #00ADEF
@@ -2263,6 +2264,7 @@ Welcom
      min-height: 400px;
      background: transparent;
  }
+
 .Welcome-area .container .Welcome-entry{    
     overflow: hidden;
     padding: 50px 10px 45px; 
