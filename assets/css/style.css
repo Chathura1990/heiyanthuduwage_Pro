@@ -98,7 +98,14 @@ img {
     left: -155px;
     top: 97px;
     width: 373px;
-    border: 0px solid;
+    border-top-width: 0px;
+    border-top-style: solid;
+    border-right-width: 0px;
+    border-right-style: solid;
+    border-left-width: 0px;
+    border-left-style: solid;
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
     padding: 0;
 }
 
@@ -846,11 +853,11 @@ label small{
 
 @media screen and  (max-width: 550px) {
     .button1 {
-        font: normal 8vw/normal "alex-brush", Tahoma, sans-serif !important;
+        font: normal 8vw/normal "alex-brush", Helvetica, sans-serif !important;
     }
 
-    .buttonl {
-        font: normal 5vw/normal "redressed", Tahoma, sans-serif !important;
+    .button2 {
+        font: normal 3.2vw/normal "a", Playball, sans-serif !important;
     }
     .imgimg{
         display: none;
