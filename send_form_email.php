@@ -1,8 +1,18 @@
-<?php
+ <?php
+
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\Exception;
+
+ require 'vendor/autoload.php';
+
+   // var_dump($_POST);
+ //-------------------------------------------------------------
 if(isset($_POST['email'])) {
  
+    // echo "Test2";
+ 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "info@heiyanthuduwageproperties.com";
+    $email_to = "chathurasanjeew@gmail.com";
     $email_subject = "Mail from client. Heiyanthuduwage_pro";
  
     function died($error) {
@@ -24,7 +34,7 @@ if(isset($_POST['email'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
  
-     
+    // echo "Test3";
  
     $first_name = $_POST['first_name']; // required
     $last_name = $_POST['last_name']; // required
@@ -74,10 +84,58 @@ if(isset($_POST['email'])) {
     $email_message .= "message: ".clean_string($message)."\n";
  
 // create email headers
-$headers = 'From: '.$email_from."\r\n".
-'Reply-To: '.$email_from."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+//$headers = 'From: '.$email_from."\r\n".
+//'Reply-To: '.$email_from."\r\n" .
+//'X-Mailer: PHP/' . phpversion();
+//@mail($email_to, $email_subject, $email_message, $headers);
+
+
+// echo "Test";
+
+// ------------------------------------------------------------------------------
+
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    try {
+        //Server settings
+        $mail->setLanguage('en', 'vendor/phpmailer/phpmailer/language/'); // Перевод на русский язык
+
+        //Enable SMTP debugging
+        // 0 = off (for production use)
+        // 1 = client messages
+        // 2 = client and server messages
+        $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+
+        $mail->SMTPSecure = 'ssl';                          // secure transfer enabled REQUIRED for Gmail
+        $mail->Port = 465;                                  // TCP port to connect to
+        //$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        //$mail->Port = 587;                                    // TCP port to connect to
+
+        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+        $mail->Username = 'chathurasanjeew@gmail.com';               // SMTP username
+        $mail->Password = '15154556cC~!';                          // SMTP password
+
+        //Recipients
+        $mail->setFrom(clean_string($email_from), clean_string($first_name). " " .clean_string($last_name));
+        $mail->addAddress('rbond007@mail.ru');              // Name is optional
+
+        //Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = clean_string($subject);
+        $mail->Body    ='This is the body in plain text for non-HTML mail clients';
+        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+
+// ------------------------------------------------------------------------------
 ?>
  
 <!-- include your own success html here -->
@@ -87,4 +145,3 @@ Thank you for contacting us. We will be in touch with you very soon.
 <?php
  
 }
-?>
